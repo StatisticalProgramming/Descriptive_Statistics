@@ -1,0 +1,37 @@
+---
+title: "Stata and SPSS"
+author: "William Murrah"
+date: "November 17, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE, message=FALSE}
+require(knitr)
+spsspath <-"C:/Program Files/IBM/SPSS/Statistics/23/stats.exe"
+opts_chunk$set(engine="spss", engine.path=spsspath, comment="")
+```
+
+```{r}
+SPSSINC GETURI DATA 
+URI="http://calcnet.mth.cmich.edu/org/spss/V16_materials/DataSets_v16/airline_passengers.sav" 
+FILETYPE=SAV 
+/OPTIONS 
+SHEETNUMBER=1 READNAMES=YES ASSUMEDSTRWIDTH=32767. 
+
+DESCRIPTIVES VARIABLES=number
+  /STATISTICS=MEAN STDDEV MIN MAX.
+
+```
+
+Descriptive Statistics					
+	N	Minimum	Maximum	Mean	Std. Deviation
+number	144	104	622	280.30	119.966
+Valid N (listwise)	144				
+
+
+

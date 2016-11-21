@@ -1,0 +1,23 @@
+---
+title: "Stata and SPSS"
+author: "William Murrah"
+date: "November 17, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE, message=FALSE}
+require(knitr)
+statapath <- "C:/Program Files (x86)/Stata14/StataMP-64.exe"
+opts_chunk$set(engine="stata", engine.path=statapath, comment="")
+```
+
+```{r}
+sysuse auto
+summarize
+```
+
